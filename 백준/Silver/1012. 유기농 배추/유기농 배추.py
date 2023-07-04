@@ -26,7 +26,7 @@ for _ in range(t):
         x,y = map(int,sys.stdin.readline().split())
         arr[y][x] = 1
     result =0
-    #2500개 배회
+    #최대 2500개 배회
     for i in range(n):
         for j in range(m):
             if arr[i][j]==1:
