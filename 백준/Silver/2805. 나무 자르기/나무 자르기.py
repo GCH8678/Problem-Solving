@@ -1,6 +1,5 @@
 
 import sys
-
 # 나무 갯수 n
 # 나무 길이 m (집에 가져가려는)
 
@@ -22,11 +21,13 @@ def check(mid,lst):
     # print("s e")
     sum = 0
     for i in lst:
-        if i<mid:
-            continue
-        sum+=i-mid
+        if i>=mid:
+            sum+=i-mid
+        #print(sum,i-mid)
         if sum>=m:
+            #print("over",sum-m,"->",sum)
             return False
+    #print(sum)
     return True
         
 
