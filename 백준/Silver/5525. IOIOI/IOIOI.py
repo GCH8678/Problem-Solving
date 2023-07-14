@@ -13,11 +13,31 @@ m = int(sys.stdin.readline())
 s = sys.stdin.readline().rstrip()
 
 pn = "I"+str("OI"*n)
-#print(pn,s)
+# #print(pn,s)
 
-cnt = 0
-for i in range(m):
-    if pn[::] == s[i:i+n*2+1]:
+# cnt = 0
+# for i in range(m):
+#     if pn[::] == s[i:i+n*2+1]:
+#         cnt+=1
+
+# print(cnt)
+
+temp = "OI"
+
+l,r=0,0
+cnt =0
+while l<m:
+    if s[l:l+2*n+1] == pn:
+        #print(s[l:l+2*n+1])
         cnt+=1
-
+        r=l+2*n+1
+        while s[r:r+2] == temp:
+            #print(s[r:r+2])
+            cnt+=1
+            r+=2
+        l=r
+    else:
+        l+=1
+        #l = l+2*n
+        #print(l)
 print(cnt)
